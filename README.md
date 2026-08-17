@@ -1,6 +1,6 @@
 # bob-shell.nvim
 
-Neovim integration for [Bob Shell](https://bob.ibm.com) — open Bob shell in a split, resume past conversations, and send context from your editor.
+Neovim integration for [Bob Shell](https://bob.ibm.com), heavily inspired by [bob-nvim](https://github.com/enricobguedes/bob-nvim/) — open Bob shell in a split, resume past conversations, and send context from your editor.
 
 ## Requirements
 
@@ -74,5 +74,4 @@ require("bob").setup({
 **Cramped window** — increase `split_size` (minimum 50).
 
 ## License
-
 MIT
