@@ -19,7 +19,7 @@ Neovim integration for [Bob Shell](https://bob.ibm.com), heavily inspired by [bo
 
 ```lua
 -- lazy.nvim
-{
+return {
   "egramsdoescode/bob-shell.nvim",
   config = function()
     require("bob").setup()
