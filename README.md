@@ -62,10 +62,16 @@ require("bob").setup({
   task_preview = true,         -- two-panel floating picker for :BobTaskHistory
   task_preview_messages = 20,  -- max chat turns shown in preview
   picker = "auto",             -- "auto" | "snacks" | "telescope" | "builtin"
+  team_id = nil,               -- required when using a general API key (see note below)
 })
 ```
 
 `picker = "auto"` resolves: snacks.nvim → Telescope → builtin float → `vim.ui.select`.
+
+> [!NOTE]
+> If your Bob API key is of type **general** (rather than **Inference**), you must set
+> `team_id` to your team's ID. This passes `--team-id <team-id>` to every `bob chat`
+> invocation automatically.
 
 ## Troubleshooting
 

@@ -10,6 +10,7 @@
 --- @field task_preview_messages number Max messages shown in task preview panel
 --- @field task_preview boolean Enable two-panel floating task picker
 --- @field picker string Picker backend: "auto" | "builtin" | "telescope" | "snacks"
+--- @field team_id string|nil Team ID — required when using a general API key (not an Inference key)
 local M = {}
 
 M.config = {
@@ -23,6 +24,7 @@ M.config = {
 	task_preview_messages = 20,
 	task_preview = true,
 	picker = "auto",
+	team_id = nil,
 }
 
 return M

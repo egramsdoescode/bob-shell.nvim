@@ -31,6 +31,10 @@ local function build_bob_command(searchText, resume_id)
 		flags = flags .. " --mode " .. escape_shell_arg(config.config.chat_mode)
 	end
 
+	if config.config.team_id and config.config.team_id ~= "" then
+		flags = flags .. " --team-id " .. escape_shell_arg(config.config.team_id)
+	end
+
 	if resume_id and resume_id ~= "" then
 		return bobCmd .. " --resume " .. escape_shell_arg(resume_id)
 	elseif searchText and searchText ~= "" then
