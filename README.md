@@ -2,7 +2,7 @@
 
 Neovim integration for [Bob Shell](https://bob.ibm.com), heavily inspired by [bob-nvim](https://github.com/enricobguedes/bob-nvim/) — open Bob shell in a split, resume past conversations, and send context from your editor.
 
-<img width="1732" height="1080" alt="Image" src="https://github.com/user-attachments/assets/7bb0505d-0e65-4e0e-a387-75aecb627618" />
+<img width="1732" height="1080" alt="Image" src="https://github.com/user-attachments/assets/61650c33-1e10-42fc-b5dc-1a706ed4ce25" />
 
 ## Requirements
 
