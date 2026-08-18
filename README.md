@@ -35,17 +35,16 @@ return {
       picker = "auto",             -- "auto" | "snacks" | "telescope" | "builtin"
       team_id = nil,               -- required when using a general API key (see note below)
     })
+
+    vim.keymap.set("n", "<leader>tb", ":BobShell<CR>",        { desc = "Bob: open" })
+    vim.keymap.set("n", "<leader>tt", ":BobToggle<CR>",       { desc = "Bob: toggle" })
+    vim.keymap.set("n", "<leader>tc", ":BobClose<CR>",        { desc = "Bob: close" })
+    vim.keymap.set("n", "<leader>tr", ":BobResumeLatest<CR>", { desc = "Bob: resume latest" })
+    vim.keymap.set("n", "<leader>th", ":BobTaskHistory<CR>",  { desc = "Bob: task history" })
+    vim.keymap.set("n", "<leader>ts", ":BobSendFile<CR>",     { desc = "Bob: send file" })
+    vim.keymap.set("n", "<leader>ty", ":BobSendYank<CR>",     { desc = "Bob: send yank" })
+    vim.keymap.set("x", "<leader>tv", ":BobSendVisual<CR>",   { desc = "Bob: send selection" })
   end,
-  keys = {
-    { "<leader>tb", ":BobShell<CR>",        desc = "Bob: open" },
-    { "<leader>tt", ":BobToggle<CR>",        desc = "Bob: toggle" },
-    { "<leader>tc", ":BobClose<CR>",         desc = "Bob: close" },
-    { "<leader>tr", ":BobResumeLatest<CR>",  desc = "Bob: resume latest" },
-    { "<leader>th", ":BobTaskHistory<CR>",   desc = "Bob: task history" },
-    { "<leader>ts", ":BobSendFile<CR>",      desc = "Bob: send file" },
-    { "<leader>ty", ":BobSendYank<CR>",      desc = "Bob: send yank" },
-    { "<leader>tv", ":BobSendVisual<CR>",    desc = "Bob: send selection", mode = "x" },
-  },
 }
 ```
 
