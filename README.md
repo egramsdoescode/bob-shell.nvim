@@ -22,8 +22,30 @@ Neovim integration for [Bob Shell](https://bob.ibm.com), heavily inspired by [bo
 return {
   "egramsdoescode/bob-shell.nvim",
   config = function()
-    require("bob").setup()
+    require("bob").setup({
+      split_direction = "right",   -- "left" | "right" | "above" | "below"
+      split_size = 50,             -- columns (left/right) or rows (above/below), min 50
+      chat_mode = "agent",         -- default Bob chat mode
+      auto_focus = true,           -- focus Bob window on open
+      start_in_insert = true,      -- enter insert mode when auto_focus = true
+      task_history_limit = 50,     -- max entries in history picker
+      db_path = nil,               -- override path to bob.db (default: ~/.bob/db/bob.db)
+      task_preview = true,         -- two-panel floating picker for :BobTaskHistory
+      task_preview_messages = 20,  -- max chat turns shown in preview
+      picker = "auto",             -- "auto" | "snacks" | "telescope" | "builtin"
+      team_id = nil,               -- required when using a general API key (see note below)
+    })
   end,
+  keys = {
+    { "<leader>tb", ":BobShell<CR>",        desc = "Bob: open" },
+    { "<leader>tt", ":BobToggle<CR>",        desc = "Bob: toggle" },
+    { "<leader>tc", ":BobClose<CR>",         desc = "Bob: close" },
+    { "<leader>tr", ":BobResumeLatest<CR>",  desc = "Bob: resume latest" },
+    { "<leader>th", ":BobTaskHistory<CR>",   desc = "Bob: task history" },
+    { "<leader>ts", ":BobSendFile<CR>",      desc = "Bob: send file" },
+    { "<leader>ty", ":BobSendYank<CR>",      desc = "Bob: send yank" },
+    { "<leader>tv", ":BobSendVisual<CR>",    desc = "Bob: send selection", mode = "x" },
+  },
 }
 ```
 
@@ -39,37 +61,6 @@ return {
 | `:BobSendFile` | Send `@current-file` to active session |
 | `:BobSendYank` | Send unnamed register to active session |
 | `:BobSendVisual` | Send visual selection to active session |
-
-### Keybindings
-
-```lua
-vim.keymap.set("n", "<leader>tb", ":BobShell<CR>",        { desc = "Bob: open" })
-vim.keymap.set("n", "<leader>tt", ":BobToggle<CR>",       { desc = "Bob: toggle" })
-vim.keymap.set("n", "<leader>tc", ":BobClose<CR>",        { desc = "Bob: close" })
-vim.keymap.set("n", "<leader>tr", ":BobResumeLatest<CR>", { desc = "Bob: resume latest" })
-vim.keymap.set("n", "<leader>th", ":BobTaskHistory<CR>",  { desc = "Bob: task history" })
-vim.keymap.set("n", "<leader>ts", ":BobSendFile<CR>",     { desc = "Bob: send file" })
-vim.keymap.set("n", "<leader>ty", ":BobSendYank<CR>",     { desc = "Bob: send yank" })
-vim.keymap.set("x", "<leader>tv", ":BobSendVisual<CR>",   { desc = "Bob: send selection" })
-```
-
-## Configuration
-
-```lua
-require("bob").setup({
-  split_direction = "right",   -- "left" | "right" | "above" | "below"
-  split_size = 50,             -- columns (left/right) or rows (above/below), min 50
-  chat_mode = "agent",         -- default Bob chat mode
-  auto_focus = true,           -- focus Bob window on open
-  start_in_insert = true,      -- enter insert mode when auto_focus = true
-  task_history_limit = 50,     -- max entries in history picker
-  db_path = nil,               -- override path to bob.db (default: ~/.bob/db/bob.db)
-  task_preview = true,         -- two-panel floating picker for :BobTaskHistory
-  task_preview_messages = 20,  -- max chat turns shown in preview
-  picker = "auto",             -- "auto" | "snacks" | "telescope" | "builtin"
-  team_id = nil,               -- required when using a general API key (see note below)
-})
-```
 
 > [!NOTE]
 > If your Bob API key is of type **general** (rather than **Inference**), you must set
