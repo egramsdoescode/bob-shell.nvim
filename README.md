@@ -66,12 +66,12 @@ require("bob").setup({
 })
 ```
 
-`picker = "auto"` resolves: snacks.nvim → Telescope → builtin float → `vim.ui.select`.
-
 > [!NOTE]
 > If your Bob API key is of type **general** (rather than **Inference**), you must set
 > `team_id` to your team's ID. This passes `--team-id <team-id>` to every `bob chat`
 > invocation automatically.
+
+`picker = "auto"` resolves: snacks.nvim → Telescope → builtin float → `vim.ui.select`.
 
 ## Troubleshooting
 
