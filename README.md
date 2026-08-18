@@ -1,7 +1,7 @@
 # bob-shell.nvim
 
 <p align="center">
-  <img src="assets/bob.svg" height="120" alt="Bob" /><br/>
+  <img src="assets/bob.svg" height="140" alt="Bob" /><br/>
   <img src="assets/1920px-Neovim-mark.svg.png" height="90" alt="Neovim" />
 </p>
 
