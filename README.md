@@ -1,7 +1,10 @@
 # bob-shell.nvim
 
 <p align="center">
-  <img src="assets/bob.svg" height="120" alt="Bob" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/1920px-Neovim-mark.svg.png" height="90" style="vertical-align: middle;" alt="Neovim" />
+  <table align="center"><tr>
+    <td><img src="assets/bob.svg" height="120" alt="Bob" /></td>
+    <td valign="middle"><img src="assets/1920px-Neovim-mark.svg.png" height="90" alt="Neovim" /></td>
+  </tr></table>
 </p>
 
 Neovim integration for [Bob Shell](https://bob.ibm.com), heavily inspired by [bob-nvim](https://github.com/enricobguedes/bob-nvim/) — open Bob shell in a split, resume past conversations, and send context from your editor.
