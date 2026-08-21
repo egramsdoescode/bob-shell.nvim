@@ -36,7 +36,7 @@ local function build_bob_command(searchText, resume_id)
 	end
 
 	if resume_id and resume_id ~= "" then
-		return bobCmd .. " --resume " .. escape_shell_arg(resume_id)
+		return bobCmd .. " --resume " .. escape_shell_arg(resume_id) .. flags
 	elseif searchText and searchText ~= "" then
 		return bobCmd .. " " .. escape_shell_arg(searchText) .. flags
 	else
