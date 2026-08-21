@@ -9,6 +9,9 @@ Neovim integration for [Bob Shell](https://bob.ibm.com), heavily inspired by [bo
 
 <img width="1732" height="1080" alt="Image" src="https://github.com/user-attachments/assets/61650c33-1e10-42fc-b5dc-1a706ed4ce25" />
 
+> 📖 **[Full documentation →](DOCS.md)** — every option, the Lua API, window and send
+> behavior, task-history internals, highlight groups, and troubleshooting.
+
 ## Requirements
 
 - Neovim >= 0.8.0
@@ -48,6 +51,10 @@ return {
 }
 ```
 
+Every option, with its type, default, and the behavior behind it, is documented in
+[Configuration](DOCS.md#configuration). Installing with packer or vim-plug is covered
+in [Installation](DOCS.md#installation).
+
 ## Usage
 
 | Command | Description |
@@ -67,6 +74,11 @@ return {
 > invocation automatically.
 
 `picker = "auto"` resolves: snacks.nvim → Telescope → builtin float → `vim.ui.select`.
+See [Pickers](DOCS.md#pickers) for the forced-backend modes and the builtin float's keymaps.
+
+More detail: [Commands](DOCS.md#commands) · [Lua API](DOCS.md#lua-api) ·
+[Window behavior](DOCS.md#window-behavior) · [Sending context](DOCS.md#sending-context-to-bob) ·
+[Task history](DOCS.md#task-history) · [Highlight groups](DOCS.md#highlight-groups)
 
 ## Troubleshooting
 
@@ -75,6 +87,9 @@ return {
 **Task history errors** — install `libsqlite3` for your OS (`brew install sqlite` / `apt install libsqlite3-0` / `dnf install sqlite-libs`).
 
 **Cramped window** — increase `split_size` (minimum 50).
+
+For the full list, including what each error message means and why a task might not
+appear in history, see [Troubleshooting](DOCS.md#troubleshooting).
 
 ## License
 MIT
